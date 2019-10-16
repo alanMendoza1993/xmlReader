@@ -1,0 +1,35 @@
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+.inputfile + label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    background-color: black;
+    display: inline-block;
+    cursor: pointer;
+    padding: .3rem;
+    background-color: rgb(184, 48, 48);
+    border-radius: .5rem;
+    
+}
+.inputfile:focus + label {
+	/* outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px; */
+    outline: none;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: rgb(206, 37, 37);
+}
+
+.btn-pdf img {
+    width: 1rem;
+    height: 1rem;
+}

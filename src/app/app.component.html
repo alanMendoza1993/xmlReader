@@ -1,0 +1,45 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">Lector XML</a>
+  <form class="form-inline">
+    <input type="file" name="file" id="file" class="inputfile" (change)="fileChanged($event)" data-multiple-caption="{count} files selected" />    
+    <label for="file" *ngIf="!getOption('working')">Selecciona un archivo</label>
+    <label for="file" *ngIf="getOption('working')">Cargando..</label>
+  </form>
+</nav>
+<div class="container">
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+<!--         <th scope="col">Certificado</th>
+ -->        <th scope="col">Tipo de moneda</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Lugar de expedicion</th>
+<!--         <th scope="col">Sello</th>
+ -->        <th scope="col">Nombre Receptor</th>
+ <th scope="col">Nombre Emisor</th>
+ <th scope="col">Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let xml of data">
+        <th scope="row">1</th>
+<!--         <td class="col-2">{{xml.certificate}}</td>
+ -->        <td>{{xml.currency}}</td>
+        <td>{{xml.date | date: 'dd/MM/yyyy'}}</td>
+        <td>{{xml.proofPaymen}}</td>
+        <td>{{xml.reciver.Nombre}}</td>
+        <td>{{xml.sender.Nombre}}</td>
+        <td>
+          <a class="btn btn-light btn-sm btn-pdf" href="http://localhost:3000/files/getPdf/{{xml._id}}">
+            <img src="../assets/pdf.svg" alt="pdf" >
+          </a>
+        </td>
+<!--         <td>{{xml.stamp}}</td>
+ -->      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
